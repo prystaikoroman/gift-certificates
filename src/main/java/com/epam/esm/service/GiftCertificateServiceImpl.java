@@ -64,8 +64,8 @@ private final GiftCertificateDao giftCertificateDao;
     }
 
     @Override
-    public GiftCertificateDto getGiftCertificateById(int id) {
-        return null;
+    public GiftCertificateDto getGiftCertificateById(Long id) {
+        return giftCertificateDao.getGiftCertificateById(id);
     }
 
     @Override

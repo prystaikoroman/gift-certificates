@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public interface GiftCertificateService {
     GiftCertificatePage getAllGiftCertificates(int page, int size);
 
-    GiftCertificateDto getGiftCertificateById(int id);
+    GiftCertificateDto getGiftCertificateById(Long id);
 
     int addGiftCertificate(GiftCertificateDto giftCertificateDto);
 

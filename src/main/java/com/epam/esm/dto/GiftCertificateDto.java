@@ -1,7 +1,11 @@
 package com.epam.esm.dto;
 
 
+import com.epam.esm.model.Tag;
+
 import java.util.Date;
+import java.util.List;
+import java.util.Objects;
 
 public class GiftCertificateDto {
     private Long id;
@@ -9,18 +13,28 @@ public class GiftCertificateDto {
     private Short duration;
     private String create_date;
     private String last_update_date;
+    private List<Tag> tags;
 
     public GiftCertificateDto() {
     }
 
-    public GiftCertificateDto(Long id, String name, Short duration, String create_date, String last_update_date) {
+    public GiftCertificateDto(Long id, String name, Short duration, String create_date, String last_update_date, List<Tag> tags) {
         this.id = id;
         this.name = name;
         this.duration = duration;
         this.create_date = create_date;
         this.last_update_date = last_update_date;
+        this.tags = tags;
     }
 
+
+    public List<Tag> getTags() {
+        return tags;
+    }
+
+    public void setTags(List<Tag> tags) {
+        this.tags = tags;
+    }
     public Long getId() {
         return id;
     }
@@ -61,5 +75,28 @@ public class GiftCertificateDto {
         this.last_update_date = last_update_date;
     }
 
+    @Override
+    public String toString() {
+        return "GiftCertificateDto{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", duration=" + duration +
+                ", create_date='" + create_date + '\'' +
+                ", last_update_date='" + last_update_date + '\'' +
+                ", tags=" + tags +
+                '}';
+    }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        GiftCertificateDto that = (GiftCertificateDto) o;
+        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(duration, that.duration) && Objects.equals(create_date, that.create_date) && Objects.equals(last_update_date, that.last_update_date) && Objects.equals(tags, that.tags);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, name, duration, create_date, last_update_date, tags);
+    }
 }

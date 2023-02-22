@@ -48,7 +48,7 @@ public String helloWorld(Model model) {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public GiftCertificateDto getGiftCertificate(@PathVariable int id) {
+    public GiftCertificateDto getGiftCertificateById(@PathVariable Long id) {
         return giftCertificateService.getGiftCertificateById(id);
     }
 

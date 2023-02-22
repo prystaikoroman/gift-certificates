@@ -48,11 +48,10 @@ public class GiftCertificateDaoImpl implements GiftCertificateDao {
 
     @Override
     public GiftCertificateDto getGiftCertificateById(Long id) {
-//        return (GiftCertificateDto) jdbcTemplate.queryForObject(
-//                "Select *  From gift_certificate where id = ?",
-//                new Object[]{id},
-//                new BeanPropertyRowMapper<GiftCertificateDto>());
-        return null;
+        return  jdbcTemplate.queryForObject(
+                "Select *  From gift_certificate where id = ?",
+                new Long[]{id},
+                new BeanPropertyRowMapper<GiftCertificateDto>(GiftCertificateDto.class));
     }
 
     @Override
