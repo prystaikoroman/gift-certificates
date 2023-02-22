@@ -12,7 +12,7 @@ public interface GiftCertificateService {
 
     int addGiftCertificate(GiftCertificateDto giftCertificateDto);
 
-    GiftCertificateDto updateGiftCertificate(int id, GiftCertificateDto giftCertificateDto);
+    boolean updateGiftCertificate(GiftCertificateDto giftCertificateDto);
 
-    void deleteGiftCertificate(int id);
+    boolean deleteGiftCertificate(Long id);
 }

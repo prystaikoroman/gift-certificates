@@ -26,7 +26,7 @@ public class TagController {
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE)
-    public TagDto getTagById(@PathVariable int id) {
+    public TagDto getTagById(@PathVariable Long id) {
         return tagService.getTagById(id);
     }
 

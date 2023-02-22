@@ -1,19 +1,17 @@
 package com.epam.esm.dto;
 
-import com.epam.esm.model.Gift_Certificate;
-
 import java.util.List;
 import java.util.Objects;
 
 public class TagDto {
     private Long id;
     private String name;
-    List<Gift_Certificate> gift_certificateList;
+    List<GiftCertificateDto> gift_certificateList;
 
     public TagDto() {
     }
 
-    public TagDto(Long id, String name, List<Gift_Certificate> gift_certificateList) {
+    public TagDto(Long id, String name, List<GiftCertificateDto> gift_certificateList) {
         this.id = id;
         this.name = name;
         this.gift_certificateList = gift_certificateList;
@@ -35,11 +33,11 @@ public class TagDto {
         this.name = name;
     }
 
-    public List<Gift_Certificate> getGift_certificateList() {
+    public List<GiftCertificateDto> getGift_certificateList() {
         return gift_certificateList;
     }
 
-    public void setGift_certificateList(List<Gift_Certificate> gift_certificateList) {
+    public void setGift_certificateList(List<GiftCertificateDto> gift_certificateList) {
         this.gift_certificateList = gift_certificateList;
     }
 

@@ -13,6 +13,8 @@ public interface TagDao {
 
     TagDto getTagById(Long id);
 
+    List<TagDto> getTagsByGiftCertificateId(Long id);
+
     int addTag(TagDto tagDto);
 
     boolean deleteTag(Long id);

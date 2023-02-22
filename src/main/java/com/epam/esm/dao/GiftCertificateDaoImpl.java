@@ -19,7 +19,7 @@ import java.util.Map;
 public class GiftCertificateDaoImpl implements GiftCertificateDao {
 
     private final JdbcTemplate jdbcTemplate;
-    private   DataSource dataSource;
+    private DataSource dataSource;
     SimpleJdbcInsert simpleJdbcInsert;
 
     public GiftCertificateDaoImpl(DataSource dataSource) {
@@ -69,14 +69,16 @@ public class GiftCertificateDaoImpl implements GiftCertificateDao {
     }
 
     @Override
-    public void updateGiftCertificate(Long id, GiftCertificateDto giftCertificateDto) {
+    public boolean updateGiftCertificate(GiftCertificateDto giftCertificateDto) {
         String updateQuery = "update gift_certificate set name = ?, duration = ?, create_date = ?, last_update_date = ? where id = ?";
-        jdbcTemplate.update(updateQuery,
+        int updateCertificate = jdbcTemplate.update(updateQuery,
                 giftCertificateDto.getName(),
                 giftCertificateDto.getDuration(),
                 giftCertificateDto.getCreate_date(),
                 giftCertificateDto.getLast_update_date(),
-                id);
+                giftCertificateDto.getId());
+
+        return updateCertificate == 1;
     }
 
     @Override

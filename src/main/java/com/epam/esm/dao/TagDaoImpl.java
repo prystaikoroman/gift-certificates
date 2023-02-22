@@ -48,7 +48,17 @@ public class TagDaoImpl implements TagDao {
         return jdbcTemplate.queryForObject(
                 "Select *  From tag where id = ?",
                 new Object[]{id},
-                new BeanPropertyRowMapper<TagDto>());
+                new BeanPropertyRowMapper<TagDto>(TagDto.class));
+    }
+
+    @Override
+    public List<TagDto> getTagsByGiftCertificateId(Long id) {
+        return jdbcTemplate.query(
+                "SELECT tag.* " +
+                        " FROM tag_has_gift_certificate tgc left outer join" +
+                        " tag on tgc.tag_id = tag.id\n" +
+                        " where tgc.gift_certificate_id = ?", new BeanPropertyRowMapper<>(TagDto.class), id);
+
     }
 
     @Override

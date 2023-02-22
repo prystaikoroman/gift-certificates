@@ -34,8 +34,13 @@ private final TagDao tagDao;
     }
 
     @Override
-    public TagDto getTagById(int id) {
+    public TagDto getTagById(Long id) {
         return null;
+    }
+
+    @Override
+    public List<TagDto> getTagsByGiftCertificateId(Long id) {
+        return tagDao.getTagsByGiftCertificateId(id);
     }
 
     @Override
@@ -44,7 +49,7 @@ private final TagDao tagDao;
     }
 
     @Override
-    public void deleteTag(int id) {
+    public void deleteTag(Long id) {
 
     }
 

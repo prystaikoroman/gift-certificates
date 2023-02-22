@@ -13,7 +13,7 @@ public interface GiftCertificateDao {
 
     int addGiftCertificate(GiftCertificateDto giftCertificateDto);
 
-    void updateGiftCertificate(Long id, GiftCertificateDto GiftCertificateDto);
+    boolean updateGiftCertificate(GiftCertificateDto GiftCertificateDto);
 
     boolean deleteGiftCertificate(Long id);
 
